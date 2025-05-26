@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano - キーボードで演奏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎹 Piano</h1>
+            <p>キーボードで演奏しよう！</p>
+        </header>
+        
+        <div class="keyboard-guide">
+            <h3>キー配置</h3>
+            <div class="guide-keys">
+                <span>A S D F G H J K L</span>
+                <span class="black-keys">W E T Y U O P</span>
+            </div>
+        </div>
+        
+        <div class="piano">
+            <!-- White keys -->
+            <div class="key white" data-key="a" data-note="C4">
+                <span class="key-label">A</span>
+                <span class="note-label">C</span>
+            </div>
+            <div class="key black" data-key="w" data-note="C#4">
+                <span class="key-label">W</span>
+                <span class="note-label">C#</span>
+            </div>
+            <div class="key white" data-key="s" data-note="D4">
+                <span class="key-label">S</span>
+                <span class="note-label">D</span>
+            </div>
+            <div class="key black" data-key="e" data-note="D#4">
+                <span class="key-label">E</span>
+                <span class="note-label">D#</span>
+            </div>
+            <div class="key white" data-key="d" data-note="E4">
+                <span class="key-label">D</span>
+                <span class="note-label">E</span>
+            </div>
+            <div class="key white" data-key="f" data-note="F4">
+                <span class="key-label">F</span>
+                <span class="note-label">F</span>
+            </div>
+            <div class="key black" data-key="t" data-note="F#4">
+                <span class="key-label">T</span>
+                <span class="note-label">F#</span>
+            </div>
+            <div class="key white" data-key="g" data-note="G4">
+                <span class="key-label">G</span>
+                <span class="note-label">G</span>
+            </div>
+            <div class="key black" data-key="y" data-note="G#4">
+                <span class="key-label">Y</span>
+                <span class="note-label">G#</span>
+            </div>
+            <div class="key white" data-key="h" data-note="A4">
+                <span class="key-label">H</span>
+                <span class="note-label">A</span>
+            </div>
+            <div class="key black" data-key="u" data-note="A#4">
+                <span class="key-label">U</span>
+                <span class="note-label">A#</span>
+            </div>
+            <div class="key white" data-key="j" data-note="B4">
+                <span class="key-label">J</span>
+                <span class="note-label">B</span>
+            </div>
+            <div class="key white" data-key="k" data-note="C5">
+                <span class="key-label">K</span>
+                <span class="note-label">C</span>
+            </div>
+            <div class="key black" data-key="o" data-note="C#5">
+                <span class="key-label">O</span>
+                <span class="note-label">C#</span>
+            </div>
+            <div class="key white" data-key="l" data-note="D5">
+                <span class="key-label">L</span>
+                <span class="note-label">D</span>
+            </div>
+            <div class="key black" data-key="p" data-note="D#5">
+                <span class="key-label">P</span>
+                <span class="note-label">D#</span>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="volume-control">
+                <label for="volume">音量:</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+                <span id="volumeValue">50</span>
+            </div>
+            
+            <div class="octave-control">
+                <label for="octave">オクターブ:</label>
+                <select id="octave">
+                    <option value="3">3</option>
+                    <option value="4" selected>4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </div>
+            
+            <div class="waveform-control">
+                <label for="waveform">音色:</label>
+                <select id="waveform">
+                    <option value="sine">Sine</option>
+                    <option value="square">Square</option>
+                    <option value="sawtooth">Sawtooth</option>
+                    <option value="triangle">Triangle</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="now-playing">
+            <div id="currentNote">押されたキー: なし</div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

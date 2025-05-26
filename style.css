@@ -109,13 +109,13 @@ header p {
 }
 
 /* Position black keys */
-.key.black[data-key="w"] { left: 50px; }
-.key.black[data-key="e"] { left: 112px; }
-.key.black[data-key="t"] { left: 236px; }
-.key.black[data-key="y"] { left: 298px; }
-.key.black[data-key="u"] { left: 360px; }
-.key.black[data-key="o"] { left: 484px; }
-.key.black[data-key="p"] { left: 546px; }
+.key.black[data-key="w"] { left: 43px; }
+.key.black[data-key="e"] { left: 105px; }
+.key.black[data-key="t"] { left: 229px; }
+.key.black[data-key="y"] { left: 291px; }
+.key.black[data-key="u"] { left: 353px; }
+.key.black[data-key="o"] { left: 477px; }
+.key.black[data-key="p"] { left: 539px; }
 
 .key:hover {
     transform: translateY(2px);

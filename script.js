@@ -91,17 +91,27 @@ class Piano {
         if (this.oscillators[note]) {
             const { oscillator, gainNode } = this.oscillators[note];
             
-            // Smooth release
-            gainNode.gain.linearRampToValueAtTime(0, this.audioContext.currentTime + 0.1);
-            
-            setTimeout(() => {
+            // Immediate cleanup to prevent stuck notes
+            try {
+                gainNode.gain.cancelScheduledValues(this.audioContext.currentTime);
+                gainNode.gain.setValueAtTime(gainNode.gain.value, this.audioContext.currentTime);
+                gainNode.gain.linearRampToValueAtTime(0, this.audioContext.currentTime + 0.05);
+                
+                setTimeout(() => {
+                    try {
+                        oscillator.stop();
+                    } catch (e) {
+                        // Oscillator already stopped
+                    }
+                }, 50);
+            } catch (e) {
+                // Fallback: force stop
                 try {
                     oscillator.stop();
-                } catch (e) {
-                    // Oscillator already stopped
-                }
-                delete this.oscillators[note];
-            }, 100);
+                } catch (err) {}
+            }
+            
+            delete this.oscillators[note];
         }
     }
     
